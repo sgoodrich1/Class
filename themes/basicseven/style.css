@@ -1,0 +1,21 @@
+/*
+Theme Name: Basic Seven
+Description: Demonstrate HTML layout of templates and use of sidebar to support widgets
+*/
+main {
+	float: left;
+}
+#sidebar {
+	float: right;
+}
+main {
+	color:green;
+}
+/* https://stackoverflow.com/questions/8554043/what-is-a-clearfix */
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
