@@ -1,0 +1,28 @@
+/*
+Theme Name: Basic Eight
+Description: Demonstrate Theme Customizer
+*/
+/* CSS layout on template pages */
+main {
+	float: left;
+}
+#sidebar {
+	float: right;
+}
+main {
+	color:green;
+}
+/* https://stackoverflow.com/questions/8554043/what-is-a-clearfix */
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.my_header_menu_class ul {
+	list-style-type: none;
+}
+.my_header_menu_class ul li {
+	display: inline-block;
+}
