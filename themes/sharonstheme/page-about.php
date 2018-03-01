@@ -11,7 +11,7 @@
 	about template yesh it is<br><br>
 	<b>Start WordPress Loop</b><br><br>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php get_template_part( 'template-parts/post/content', 'page-about' ); ?>
+	<?php get_template_part( 'template-parts/page/content', 'page-about' ); ?>
 	<?php endwhile; else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>
