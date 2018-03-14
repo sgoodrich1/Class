@@ -8,9 +8,12 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array('parent-style')
+        array('storefront-style')
     );
+	wp_register_style('woo-style', get_stylesheet_directory_uri() . '/woocommerce/woo-style.css');
+	wp_enqueue_style('woo-style');
 }
 //
 // Your code goes below
 //
+require_once get_stylesheet_directory() . '/woocommerce/woo-functions.php';

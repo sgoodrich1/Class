@@ -6,18 +6,3 @@ Template:       storefront
 
 (optional values you can add: Theme URI, Author URI, Version, License, License URI, Tags, Text Domain)
 */
-body{
-	background-color: #cccccc;
-	color: #660000;
-	font-family: arial;
-}
-
-header {
-	background: url(images/sharonsSeattleBanner1.jpg); 
-	background-position: top left, top right;
-	background-repeat: repeat-x;
-	height: 200px;
-	padding: 0;
-	border: 8px outset #8bbcde;
-	box-shadow: 5px 5px 5px #b8b7b8;
-}
