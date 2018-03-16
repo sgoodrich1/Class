@@ -1,0 +1,20 @@
+2018-03-15T16:47:00+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in /var/www/html/wordpress/wp-content/themes/storefront-child/woocommerce/woo-functions.php:233
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): action_woocommerce_admin_order_item_values(NULL, Object(WC_Order_Item_Shipping), 2)
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wordpress/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-shipping.php(53): do_action('woocommerce_adm...', NULL, Object(WC_Order_Item_Shipping), 2)
+#4 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(71): include('/var/www/html/w...')
+#5 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(41): include('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-admin/inc
+
+2018-03-15T17:09:01+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in /var/www/html/wordpress/wp-content/themes/storefront-child/woocommerce/woo-functions.php:233
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/class-wp-hook.php(286): action_woocommerce_admin_order_item_values(NULL, Object(WC_Order_Item_Shipping), 2)
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wordpress/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-shipping.php(53): do_action('woocommerce_adm...', NULL, Object(WC_Order_Item_Shipping), 2)
+#4 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(71): include('/var/www/html/w...')
+#5 /var/www/html/wordpress/wp-content/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(41): include('/var/www/html/w...')
+#6 /var/www/html/wordpress/wp-admin/inc
+
