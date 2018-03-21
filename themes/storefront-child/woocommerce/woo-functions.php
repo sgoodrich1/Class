@@ -1,5 +1,5 @@
 <?php
-//following 7 actions all tied to same woocommerce_single_product_summary hook
+//Sharon's version following 7 actions all tied to same woocommerce_single_product_summary hook
 //do_action( 'woocommerce_single_product_summary' );
 //we want to change the sequence of the displayed items output by this action
 //in template file content-single-product.php
@@ -165,7 +165,7 @@ add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_ch
 function my_custom_checkout_field_display_admin_order_meta($order){
     echo '<p><strong>'.__('Phone From Checkout Form').':</strong> ' . get_post_meta( $order->get_id(), '_shipping_phone', true ) . '</p>';
     echo '<p><strong>'.__('Planet From Checkout Form').':</strong> ' . get_post_meta( $order->get_id(), '_shipping_planet', true ) . '</p>';
-	//echo '<p><strong>'.__('Shipping Planet').':</strong> ' . get_post_meta( $order->id, 'Shipping Planet', true ) . '</p>';
+	echo '<p><strong>'.__('Shipping Planet').':</strong> ' . get_post_meta( $order->id, 'Shipping Planet', true ) . '</p>';
 }
 	
 /**
@@ -211,7 +211,8 @@ add_filter( 'woocommerce_shop_order_search_fields', function ($search_fields ) {
             add_post_meta($order_id, "_product_sku", $search_sku, true); // <= ## Here ##
         }
     }
-    return array_merge($search_fields, array('_product_id', '_product_sku'));
+	$array2 = array('_product_id', '_product_sku'); //	this is what we're working on in class today*****************************************
+    return array_merge($search_fields, $array2); ///array('_product_id', '_product_sku'));
 } );
 ////////////////////////////////////////////////////////////////////////////////////
 //////////display item category in admin Orders page////
@@ -242,16 +243,15 @@ function action_woocommerce_admin_order_item_values( $_product, $item, $item_id 
    if( $term = get_term_by( 'id', $_categoryid, 'product_cat' ) ){
    //echo $term->name .', ';
    echo $term->name;
+   }
    if($c < $len) {echo ', ';}
    }
-   
-   
-  } } ?>
+   } ?>
  </td>
 <?php
 };
  
-// add the action
+ // add the action
 add_action( 'woocommerce_admin_order_item_values', 'action_woocommerce_admin_order_item_values', 10, 3 );
 add_action( 'woocommerce_admin_order_item_headers', 'action_woocommerce_admin_order_item_headers', 10, 0 );
 //////////
@@ -263,3 +263,4 @@ function woocommerce_shop_order_search_order_total( $search_fields ) {
 $search_fields[] = '_order_total';
 return $search_fields;
 }
+?>
