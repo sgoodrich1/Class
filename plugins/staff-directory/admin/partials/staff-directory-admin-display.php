@@ -19,6 +19,7 @@
 	$custom = get_post_custom($post->ID);
 	$staff_directory_first_name = $custom["staff_directory_first_name"][0];
 	$staff_directory_last_name = $custom["staff_directory_last_name"][0];
+	$staff_directory_sort_order = $custom["staff_directory_sort_order"][0];
 		
 ?>
 <fieldset class = "outer">
@@ -27,4 +28,6 @@
 	<input class="staff-directory-input"  name="staff_directory_first_name" type="text" value="<?php echo $staff_directory_first_name; ?>"  required /><br>
 	<label class="staff-directory-label">Last Name:</label>
 	<input class="staff-directory-input"  name="staff_directory_last_name" type="text" value="<?php echo $staff_directory_last_name; ?>"  required /><br>
-</fieldset>
+	<label class="staff-directory-label">Sort Order:</label>
+	<input class="staff-directory-input"  name="staff_directory_sort_order" type="text" value="<?php echo $staff_directory_sort_order; ?>"  required /><br>
+	</fieldset>

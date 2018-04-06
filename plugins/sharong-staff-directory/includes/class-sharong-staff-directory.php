@@ -6,11 +6,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       paulc2763.sb.cis
+ * @link       sgoodrich12763.sb.cis
  * @since      1.0.0
  *
- * @package    Staff_Directory
- * @subpackage Staff_Directory/includes
+ * @package    Sharong_Staff_Directory
+ * @subpackage Sharong_Staff_Directory/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Staff_Directory
- * @subpackage Staff_Directory/includes
- * @author     Paul Clark <paulc@cnm.edu>
+ * @package    Sharong_Staff_Directory
+ * @subpackage Sharong_Staff_Directory/includes
+ * @author     Sharon Goodrich <sgoodrich1@cnm.edu>
  */
-class Staff_Directory {
+class Sharong_Staff_Directory {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Staff_Directory {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Staff_Directory_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Sharong_Staff_Directory_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -72,7 +72,7 @@ class Staff_Directory {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'staff-directory';
+		$this->plugin_name = 'sharong-staff-directory';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Staff_Directory {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Staff_Directory_Loader. Orchestrates the hooks of the plugin.
-	 * - Staff_Directory_i18n. Defines internationalization functionality.
-	 * - Staff_Directory_Admin. Defines all hooks for the admin area.
-	 * - Staff_Directory_Public. Defines all hooks for the public side of the site.
+	 * - Sharong_Staff_Directory_Loader. Orchestrates the hooks of the plugin.
+	 * - Sharong_Staff_Directory_i18n. Defines internationalization functionality.
+	 * - Sharong_Staff_Directory_Admin. Defines all hooks for the admin area.
+	 * - Sharong_Staff_Directory_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Staff_Directory {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-staff-directory-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sharong-staff-directory-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-staff-directory-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sharong-staff-directory-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-staff-directory-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-sharong-staff-directory-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-staff-directory-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-sharong-staff-directory-public.php';
 
-		$this->loader = new Staff_Directory_Loader();
+		$this->loader = new Sharong_Staff_Directory_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Staff_Directory_i18n class in order to set the domain and to register the hook
+	 * Uses the Sharong_Staff_Directory_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Staff_Directory {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Staff_Directory_i18n();
+		$plugin_i18n = new Sharong_Staff_Directory_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,16 +152,15 @@ class Staff_Directory {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Staff_Directory_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Sharong_Staff_Directory_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_admin, 'register_staff_directory_post_type' );
-		$this->loader->add_action( 'save_post', $plugin_admin, 'save_staff_directory_meta_fields' );
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'display_staff_directory_meta_fields' );
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'staff_directory_sort_menu' );
+		$this->loader->add_action( 'init', $plugin_admin, 'register_sharong_staff_directory_post_type' );
+		$this->loader->add_action( 'save_post', $plugin_admin, 'save_sharong_staff_directory_meta_fields' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'display_sharong_staff_directory_meta_fields' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'sharong_staff_directory_sort_menu' );
 
-		
 	}
 
 	/**
@@ -173,7 +172,7 @@ class Staff_Directory {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Staff_Directory_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Sharong_Staff_Directory_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -204,7 +203,7 @@ class Staff_Directory {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Staff_Directory_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Sharong_Staff_Directory_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

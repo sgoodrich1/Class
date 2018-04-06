@@ -115,11 +115,11 @@ class Staff_Directory_Admin {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
 		add_meta_box("staff_directory_meta", "Staff Directory Details", array($this,"render_staff_directory_meta_options"), "staff_directory", "normal", "default");
+		//add_meta_box("staff_directory_sort", "Staff Directory Sort", array($this,"render_staff_directory_sort"), "staff_directory_sort", "normal", "default");
 	}
 	public function render_staff_directory_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/staff-directory-admin-display.php';
 	}
-	
 	
 	
 	public function save_staff_directory_meta_fields() {
@@ -128,10 +128,21 @@ class Staff_Directory_Admin {
 		update_post_meta($post->ID, "staff_directory_first_name", $staff_directory_first_name);
 		$staff_directory_last_name = sanitize_text_field( $_POST['staff_directory_last_name'] );
 		update_post_meta($post->ID, "staff_directory_last_name", $staff_directory_last_name);
-
+		$staff_directory_sort_order = sanitize_text_field( $_POST['staff_directory_sort_order'] );
+		update_post_meta($post->ID, "staff_directory_sort_order", $staff_directory_sort_order);
+	
+	
+	
 	}	
 	
-	
+	function staff_directory_sort_menu(){
+		add_submenu_page( 'edit.php?post_type=staff_directory', 'Sort', 'Sort', 'manage_options', 'staff_directory_sort', array($this,'render_staff_directory_sort') ); 
+	}
+
+	public function render_staff_directory_sort() {
+		//die('render_staff_directory_sort');
+		require_once plugin_dir_path( __FILE__ ) . 'partials/staff-directory-admin-sort.php';
+	}
 	
 
 }
