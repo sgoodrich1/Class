@@ -1,0 +1,33 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ .title{
+	 
+	 font-size: 125%;
+	 font-weight: bold;
+	 color: 600;
+ }
+ 
+  .staff-directory-label {
+	margin-left: 10px;
+	display: block;
+	float: left;
+	width: 200px;
+	font-weight: bold;
+}
+
+.staff-directory-input {
+	padding-left: 3px;
+	display: block;
+}
+
+fieldset.outer {
+	border: 3px dotted #600;
+	padding: 5px;
+}
+
+fieldset.inner {
+	border: 1px dotted #ccc;
+	margin: 3px;
+}
