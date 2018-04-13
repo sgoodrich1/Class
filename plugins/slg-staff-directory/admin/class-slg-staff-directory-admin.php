@@ -140,6 +140,8 @@ class Slg_Staff_Directory_Admin {
 		update_post_meta($post->ID, "staff_directory_job_title", $staff_directory_job_title);
 		$staff_directory_sort_order = sanitize_text_field( $_POST['staff_directory_sort_order'] );
 		update_post_meta($post->ID, "staff_directory_sort_order", $staff_directory_sort_order);	
+		$staff_directory_short_bio = sanitize_text_field( $_POST['staff_directory_short_bio'] );
+		update_post_meta($post->ID, "staff_directory_short_bio", $staff_directory_short_bio);			
 	}	
 	
 	function staff_directory_sort_menu(){

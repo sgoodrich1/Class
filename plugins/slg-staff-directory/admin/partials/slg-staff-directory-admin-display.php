@@ -24,7 +24,7 @@
 	$staff_directory_phone_number = $custom["staff_directory_phone_number"][0];
 	$staff_directory_job_title = $custom["staff_directory_job_title"][0];
 	$staff_directory_sort_order = $custom["staff_directory_sort_order"][0];
-	$staff_directory_sort_order = $custom["staff_directory_short_bio"][0];
+	$staff_directory_short_bio = $custom["staff_directory_short_bio"][0];
 		
 ?>
 <fieldset class = "outer">
