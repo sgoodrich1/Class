@@ -118,6 +118,10 @@ class Slg_Staff_Directory_Public {
 		if ( is_single() ) {
 			return $this->staff_directory_get_template_hierarchy( 'single' );
 		}	 
+				// Else use custom template
+		if ( is_archive() ) {
+			return $this->staff_directory_get_template_hierarchy( 'archive' );
+		}	
 	}
 
 	//
@@ -140,6 +144,8 @@ class Slg_Staff_Directory_Public {
 	 
 		return apply_filters( 'staff_directory_template_' . $template, $file );
 	}	
-/***************Do this for archive too****************/
+
+
+
 }
 

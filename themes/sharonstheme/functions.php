@@ -4,7 +4,7 @@ function sharonstheme_scripts() {
 wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'sharonstheme_scripts' );
-add_action( 'wp_enqueue_scripts', 'cis_add_hello_script' );
+//add_action( 'wp_enqueue_scripts', 'cis_add_hello_script' );
 function cis_add_hello_script() {
 //die('cis_add_hello_script');
 wp_register_script(

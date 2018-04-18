@@ -177,11 +177,10 @@ class Slg_Staff_Directory {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		
-		/**************This added in class 04/10/18**************/
 		$this->loader->add_filter( 'template_include', $plugin_public, 'staff_directory_template_chooser' );
-
 	}
+		/**************This added in class 04/10/18**************/
+		
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

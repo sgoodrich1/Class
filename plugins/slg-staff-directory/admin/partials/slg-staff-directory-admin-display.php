@@ -28,7 +28,8 @@
 		
 ?>
 <fieldset class = "outer">
-<legend class="title">Staff Directory Fields</legend>
+<legend class="title">Staff Directory Fields</legend><br><br>
+
 	<label class="staff-directory-label">First Name:</label>
 	<input class="staff-directory-input"  name="staff_directory_first_name" type="text" value="<?php echo $staff_directory_first_name; ?>"  required /><br>
 	

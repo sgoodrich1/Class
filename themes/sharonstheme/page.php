@@ -11,10 +11,10 @@
 <?php get_header(); ?>
 <main>
 	<div class="headerlines"></div>
-		single template yes it is<br><br>
+	single template yes it is<br><br>
 	<b>Start WordPress Loop</b><br><br>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php get_template_part( 'template-parts/page/content', 'page' ); ?>
+	<?php get_template_part( 'template-parts/post/content', 'page' ); ?>
 	<?php endwhile; else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 	<?php endif; ?>

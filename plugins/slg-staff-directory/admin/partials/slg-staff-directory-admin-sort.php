@@ -21,16 +21,18 @@
 	
 ?>
 <fieldset class = "outer">
-<legend>Staff Directory Sort Order</legend>
+<legend class="title">Staff Directory Sort Order</legend><br><br>
 
  <?php 
  if ( have_posts() ) : while ( have_posts() ) : the_post(); 
  $custom = get_post_custom($post->ID);
  echo '<label class="staff-directory-label">';
  echo $custom["staff_directory_first_name"][0].' ';
- echo $custom["staff_directory_last_name"][0].' ';
+ echo $custom["staff_directory_last_name"][0].'     ';
  echo '</label>';
- echo '<input class="staff-directory-input" type = "text" value = "'.$custom["staff_directory_sort_order"][0].'"><br>';
+ echo '<input class="staff-directory-input" type = "text" value = "'.$custom["staff_directory_sort_order"][0].'">';
+
+  
  endwhile; else : 
 	echo '<p> '._e( 'Sorry, no staff directory posts to sort.' ); 
 endif; 

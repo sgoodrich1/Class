@@ -100,7 +100,7 @@ class Slg_Staff_Directory_Admin {
 
 	}
 	
-	//This is all copied from Paul's**********************************
+	//register posts
 	public function register_staff_directory_post_type() {
 		register_post_type( 'staff_directory',
 			array(
@@ -119,7 +119,7 @@ class Slg_Staff_Directory_Admin {
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
 		add_meta_box("staff_directory_meta", "Staff Directory Details", array($this,"render_staff_directory_meta_options"), "staff_directory", "normal", "default");
 		//add_meta_box("staff_directory_sort", "Staff Directory Sort", array($this,"render_staff_directory_sort"), "staff_directory_sort", "normal", "default");
-	}
+		}
 	public function render_staff_directory_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/slg-staff-directory-admin-display.php';
 	}
@@ -129,17 +129,22 @@ class Slg_Staff_Directory_Admin {
 		global $post;
 		$staff_directory_first_name = sanitize_text_field( $_POST['staff_directory_first_name'] );
 		update_post_meta($post->ID, "staff_directory_first_name", $staff_directory_first_name);
+		
 		$staff_directory_last_name = sanitize_text_field( $_POST['staff_directory_last_name'] );
 		update_post_meta($post->ID, "staff_directory_last_name", $staff_directory_last_name);
 		
 		$staff_directory_email = sanitize_text_field( $_POST['staff_directory_email'] );
 		update_post_meta($post->ID, "staff_directory_email", $staff_directory_email);
+		
 		$staff_directory_phone_number = sanitize_text_field( $_POST['staff_directory_phone_number'] );
 		update_post_meta($post->ID, "staff_directory_phone_number", $staff_directory_phone_number);
+		
 		$staff_directory_job_title = sanitize_text_field( $_POST['staff_directory_job_title'] );
 		update_post_meta($post->ID, "staff_directory_job_title", $staff_directory_job_title);
+		
 		$staff_directory_sort_order = sanitize_text_field( $_POST['staff_directory_sort_order'] );
 		update_post_meta($post->ID, "staff_directory_sort_order", $staff_directory_sort_order);	
+		
 		$staff_directory_short_bio = sanitize_text_field( $_POST['staff_directory_short_bio'] );
 		update_post_meta($post->ID, "staff_directory_short_bio", $staff_directory_short_bio);			
 	}	

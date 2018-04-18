@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width">
-	<!--
-	<link rel="stylesheet" href="<?php //bloginfo('stylesheet_url'); ?>">
-	-->
-	<link href="https://fonts.googleapis.com/css?family=Oregano|Rock+Salt" rel="stylesheet">
-	<?php wp_head(); ?>
+<meta name="viewport" content="width=device-width">
+<!--
+<link rel="stylesheet" href="<?php //bloginfo('stylesheet_url'); ?>">
+-->
+<link href="https://fonts.googleapis.com/css?family=Oregano|Rock+Salt" rel="stylesheet">
+<?php wp_head(); ?>
 </head>
 <body>
 	<div class="headerlines"></div>
